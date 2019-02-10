@@ -12,6 +12,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.text.TextUtils;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.ContextThemeWrapper;
 import android.view.GestureDetector;
@@ -32,8 +33,8 @@ public class FloatingActionMenu extends ViewGroup {
 
     private static final int ANIMATION_DURATION = 300;
     private static final float CLOSED_PLUS_ROTATION = 0f;
-    private static final float OPENED_PLUS_ROTATION_LEFT = -90f - 45f;
-    private static final float OPENED_PLUS_ROTATION_RIGHT = 90f + 45f;
+    private static final float OPENED_PLUS_ROTATION_LEFT = -90f - 90f;
+    private static final float OPENED_PLUS_ROTATION_RIGHT = 90f + 90f;
 
     private static final int OPEN_UP = 0;
     private static final int OPEN_DOWN = 1;
@@ -600,6 +601,7 @@ public class FloatingActionMenu extends ViewGroup {
                 case MotionEvent.ACTION_UP:
                     close(mIsAnimated);
                     handled = true;
+                    break;
             }
 
             return handled;
